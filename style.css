@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ background-color: tomato;
+ font-size: larger;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #2c1a1a;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1:hover {
+  color: #f4c542;
+}
+
+header nav a {
+  color: #ffff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #f4c542;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+nav a:hover {
+  cursor: pointer;
+  color: #f4c542;
+}
+
+/* marquee {
+  background-color: green;
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+} */
+
+section {
+  padding: 60px 40px;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url(image5/pasta.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  justify-content: center;
+}
+
+.hero:hover {
+  transform: scale(1.08);
+  filter: brightness(85%);
+}
+.hero {
+  animation: heroFade 1.2s ease-out forwards;
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform:scale(1.03) ;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.herotext {
+  background: rgb(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border-radius: 6px;
+}
+
+.hero h2 {
+  color: white;
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: rgb(43, 226, 208);
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .herotext {
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+.detail {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.detail div h4 {
+  font-size: 14px;
+  counter-reset: #777;
+  margin-bottom: 15px;
+}
+
+.detail div p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 60px;
+}
+
+.content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.ingredients ul, .instruction ol {
+  padding-left: 20px;
+}
+
+.ingredients li, .instruction li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+}
+
+.nutrition {
+  background-color: #f9f9f9;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.nutrition h3 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.nutritionbox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.box {
+  background-color: white;
+  padding: 25px;
+  border: 8px;
+  box-shadow: 0 4px 8px rgba (0,0,0,0.1);
+}
+
+.box h4 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.box p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.related {
+  padding: 60px 40px;
+  background-color: #fff;
+}
+
+.related h3 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.recipecards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba (0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+  .cardimg {
+  height: 180px;
+  background-image: url(image5/vegetable.jpg); 
+} 
+
+.pasta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.soup img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.rice img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+footer {
+  background-color: #2c1a1a;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer .contact-dev {
+  margin-bottom: 1rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+footer .contact-dev span {
+  color: red;
+  font-size: xx-large;
+}
+
+footer p {
+  font-size: 14px;
+  margin-top: 2rem;
+  border-top: 1px solid white;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 14px;
+  padding-bottom: 1rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* Prevent horizontal overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Box sizing fix */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Media elements */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography scaling */
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+p, li, a, span {
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+}
+
+/* Buttons & inputs */
+button, input, textarea, select {
+  max-width: 100%;
+  font-size: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* Default mobile layout */
+section, div {
+  max-width: 100%;
+}
+
+/*
+   TABLET (≥ 600px)
+ */
+@media (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/*
+   TABLET / SMALL LAPTOP (≥ 768px)
+ */
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .responsive-flex {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+/*
+   DESKTOP (≥ 1024px)
+ */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  .responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* 
+   LARGE SCREENS (≥ 1440px)
+ */
+@media (min-width: 1440px) {
+  body {
+    max-width: 1400px;
+    margin: auto;
+  }
+}
